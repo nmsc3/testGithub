@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Services="http://www.talend.org/Services">
+  <Services:ServiceConnection xmi:id="_JtrREFgcEeOvafbGnLTTKQ" WSDLPath="" servicePort="_JtrREVgcEeOvafbGnLTTKQ">
+    <additionalInfo xmi:id="_hIh8gFgdEeOvafbGnLTTKQ" key="groupId" value="org.AmIRunning"/>
+    <additionalInfo xmi:id="_hIh8gVgdEeOvafbGnLTTKQ" key="artifactId" value="AmIRunning"/>
+    <additionalInfo xmi:id="_hIh8glgdEeOvafbGnLTTKQ" key="version" value="0.2.0"/>
+    <additionalInfo xmi:id="_5e1mwFgiEeOvafbGnLTTKQ" key="UseSAM" value="true"/>
+    <additionalInfo xmi:id="_5e1mwVgiEeOvafbGnLTTKQ" key="UseSL" value="true"/>
+    <additionalInfo xmi:id="_5e1mwlgiEeOvafbGnLTTKQ" key="Security.Basic" value="false"/>
+    <additionalInfo xmi:id="_5e1mw1giEeOvafbGnLTTKQ" key="Security.SAML" value="false"/>
+  </Services:ServiceConnection>
+  <Services:ServicePort xmi:id="_JtrREVgcEeOvafbGnLTTKQ" name="AmIRunningPortType" id="_JtqC8FgcEeOvafbGnLTTKQ" serviceOperation="_JtrRElgcEeOvafbGnLTTKQ"/>
+  <Services:ServiceOperation xmi:id="_JtrRElgcEeOvafbGnLTTKQ" label="AmIRunningOperation-AmIRunningPortType_AmIRunningOperation" name="AmIRunningOperation" id="_JtqC8VgcEeOvafbGnLTTKQ" referenceJobId="_PAlVIFgcEeOvafbGnLTTKQ"/>
+</xmi:XMI>

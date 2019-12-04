@@ -1,0 +1,108 @@
+package routines;
+import java.math.BigDecimal;
+/*
+ * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
+ * it must be before the "{talendTypes}" key.
+ * 
+ * 2. {talendTypes} 's value must be talend Type, it is required . its value should be one of: String, char | Character,
+ * long | Long, int | Integer, boolean | Boolean, byte | Byte, Date, double | Double, float | Float, Object, short |
+ * Short
+ * 
+ * 3. {Category} define a category for the Function. it is required. its value is user-defined .
+ * 
+ * 4. {param} 's format is: {param} <type>[(<default value or closed list values>)] <name>[ : <comment>]
+ * 
+ * <type> 's value should be one of: string, int, list, double, object, boolean, long, char, date. <name>'s value is the
+ * Function's parameter name. the {param} is optional. so if you the Function without the parameters. the {param} don't
+ * added. you can have many parameters for the Function.
+ * 
+ * 5. {example} gives a example for the Function. it is optional.
+ */
+public class useSequences {
+	private static final java.util.Map<String, Integer> seq_Hash = new java.util.HashMap<String, Integer>();
+    /**
+     * return last seq no or 1
+     * 
+     * {talendTypes} int | Integer
+     *
+     * {Category} Sequences
+     * 
+     * {param} string("s1") sequence identifier
+     * 
+     * 
+     * {example} sequence("s1")
+     * @return 
+     * 
+     * 
+     */
+    public static Integer lastSeqNo(String seqName) {
+    	if (seq_Hash.containsKey(seqName)) {
+            return seq_Hash.get(seqName);
+        } else {
+            return 1;
+        }
+    }
+
+
+    /**
+     * return an incremented numeric id
+     * 
+     * {talendTypes} int | Integer
+     * 
+     * {Category} Sequences
+     * 
+     * {param} string("s1") sequence identifier
+     * 
+     * {param} int(1) start value
+     * 
+     * {param} int(1) step
+     * 
+     * {example} sequence("s1", 1, 1) # 1, 2, 3, ...
+     * 
+     * {example} sequence("s2", 100, -2) # 100, 98, 96, ...
+     * 
+     */
+    public static Integer nextSequence(String seqName, int startValue, int step) {
+    	if (seq_Hash.containsKey(seqName)) {
+            seq_Hash.put(seqName, seq_Hash.get(seqName) + step);
+            return seq_Hash.get(seqName);
+        } else {
+            seq_Hash.put(seqName, startValue);
+            return startValue;
+        }
+    }
+
+    /**
+     * create a sequence if not exists and put a new startValue
+     * 
+     * {Category} Sequences
+     * 
+     * {param} string("s1") sequence identifier
+     * 
+     * {param} int(1) start value
+     * 
+     * {example} sequence("s1", 1)
+     * 
+     */
+
+    public static void resetSequence(String seqName, int startValue) {
+        seq_Hash.put(seqName, startValue);
+    }
+
+    /**
+     * remove a sequence
+     * 
+     * {Category} Sequences
+     * 
+     * {param} string("s1") sequence identifier
+     * 
+     * {example} sequence("s1")
+     * 
+     */
+
+    public static void deleteSequence(String seqName) {
+        if (seq_Hash.containsKey(seqName)) {
+            seq_Hash.remove(seqName);
+        }
+    }
+ }
